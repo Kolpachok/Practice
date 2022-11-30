@@ -1133,7 +1133,7 @@ $(document).ready(function() {
 				return { db: db, wasmBytes: wasmBytes, fromIndexedDB: true };
 			});
 		}).catch(function() {
-			return download(Module.locateFile('Practice2-HTML5-Shipping.wasm'), 'arraybuffer').then(function(wasmBytes) {
+			return download(Module.locateFile('https://dl.dropboxusercontent.com/s/e975vz8i62stqrn/Practice2-HTML5-Shipping.wasm?dl=0'), 'arraybuffer').then(function(wasmBytes) {
 				return { db: db, wasmBytes: wasmBytes, fromIndexedDB: false };
 			});
 		});
@@ -1145,7 +1145,7 @@ $(document).ready(function() {
 
 		// ----------------------------------------
 		// MAIN JS
-		var mainJsDownload = fetchOrDownloadAndStore(db, Module.locateFile('Practice2-HTML5-Shipping.js'), 'blob').then(function(data) {
+		var mainJsDownload = fetchOrDownloadAndStore(db, Module.locateFile('https://rawcdn.githack.com/Kolpachok/Practice/f14a7ab9c9d1afb77a23c76a6f66e2515d75006b/Practice2-HTML5-Shipping.js'), 'blob').then(function(data) {
 				Module['mainScriptUrlOrBlob'] = data;
 				return addScriptToDom(data).then(function() {
 					addRunDependency('wait-for-compiled-code');
@@ -1154,8 +1154,8 @@ $(document).ready(function() {
 
 		// ----------------------------------------
 		// MORE JS
-		var dataJsDownload = fetchOrDownloadAndStore(db, Module.locateFile('Practice2-HTML5-Shipping.data.js'));
-		var utilityJsDownload = fetchOrDownloadAndStore(db, Module.locateFile('Utility.js')).then(addScriptToDom);
+		var dataJsDownload = fetchOrDownloadAndStore(db, Module.locateFile('https://rawcdn.githack.com/Kolpachok/Practice/f14a7ab9c9d1afb77a23c76a6f66e2515d75006b/Practice2-HTML5-Shipping.data.js'));
+		var utilityJsDownload = fetchOrDownloadAndStore(db, Module.locateFile('https://rawcdn.githack.com/Kolpachok/Practice/f14a7ab9c9d1afb77a23c76a6f66e2515d75006b/Utility.js')).then(addScriptToDom);
 		var dataDownload =
 /* // The following code would download and store the .data file as a Blob, which should be more efficient than loading an ArrayBuffer. However that seems to be buggy, so avoid it for now.
 			fetchOrDownloadAndStore(db, Module.locateFile('Practice2-HTML5-Shipping.data')).then(function(dataBlob) {
@@ -1167,9 +1167,9 @@ $(document).ready(function() {
 			});
 */
 // Instead as a fallback, download as ArrayBuffer. (TODO: Figure out the bugs with the above, and switch to using that one instead)
-			fetchOrDownloadAndStore(db, Module.locateFile('Practice2-HTML5-Shipping.data'), 'arraybuffer').then(function(dataArrayBuffer) {
+			fetchOrDownloadAndStore(db, Module.locateFile('https://dl.dropboxusercontent.com/s/04ol8nnamhnh84q/Practice2-HTML5-Shipping.data?dl=0'), 'arraybuffer').then(function(dataArrayBuffer) {
 				Module['preloadedPackages'] = {};
-				Module['preloadedPackages'][Module.locateFile('Practice2-HTML5-Shipping.data')] = dataArrayBuffer;
+				Module['preloadedPackages'][Module.locateFile('https://dl.dropboxusercontent.com/s/04ol8nnamhnh84q/Practice2-HTML5-Shipping.data?dl=0')] = dataArrayBuffer;
 				return dataJsDownload.then(addScriptToDom);
 			});
 
