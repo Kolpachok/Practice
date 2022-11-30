@@ -18,8 +18,8 @@ Module.expectedDataFileDownloads++;
     } else {
       throw 'using preloaded data can only be done on a web page or in a web worker';
     }
-    var PACKAGE_NAME = 'https://dl.dropboxusercontent.com/s/777w39o30dnj3jn/Practice2-HTML5-Shipping.data?dl=0';
-    var REMOTE_PACKAGE_BASE = 'https://dl.dropboxusercontent.com/s/777w39o30dnj3jn/Practice2-HTML5-Shipping.data?dl=0';
+    var PACKAGE_NAME = 'C:/Unreal Projects/Practice2/Binaries/HTML5/Practice2-HTML5-Shipping.data';
+    var REMOTE_PACKAGE_BASE = 'Practice2-HTML5-Shipping.data';
     if (typeof Module['locateFilePackage'] === 'function' && !Module['locateFile']) {
       Module['locateFile'] = Module['locateFilePackage'];
       err('warning: you defined Module.locateFilePackage, that has been renamed to Module.locateFile (using your locateFilePackage for now)');
@@ -173,6 +173,6 @@ Module['FS_createPath']('/Practice2/Content', 'Paks', true, true);
   }
 
  }
- loadPackage({"files": [{"start": 0, "audio": 0, "end": 53, "filename": "/Manifest_NonUFSFiles_HTML5.txt"}, {"start": 53, "audio": 0, "end": 91, "filename": "/UE4CommandLine.txt"}, {"start": 91, "audio": 0, "end": 307457391, "filename": "/Practice2/Content/Paks/Practice2-HTML5.pak"}], "remote_package_size": 307457391, "package_uuid": "41d7ffef-0bc0-471b-81a5-63762d619252"});
+ loadPackage({"files": [{"start": 0, "audio": 0, "end": 53, "filename": "/Manifest_NonUFSFiles_HTML5.txt"}, {"start": 53, "audio": 0, "end": 91, "filename": "/UE4CommandLine.txt"}, {"start": 91, "audio": 0, "end": 118893529, "filename": "/Practice2/Content/Paks/Practice2-HTML5.pak"}], "remote_package_size": 118893529, "package_uuid": "4511c558-7eb1-4841-9fe9-083b5d8e0a57"});
 
 })();
